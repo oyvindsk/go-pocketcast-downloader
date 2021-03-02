@@ -1,0 +1,1 @@
+cd ./src/ && pwd && go build -o ../fetch-starred *.go  

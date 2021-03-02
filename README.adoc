@@ -1,0 +1,25 @@
+
+= Fetch Pocketcast starred episodes
+
+== Intro
+This program uses the Pocketcast web-player to get the metadata for your starred episodes. It then fetches the actual file from the original source  and tags them with id3v2.
+
+It remembers the files it have successfully downloaded
+
+== Usage
+You need a username and password for https://play.pocketcasts.com. (Well, at least the first time you run it, it saves the auth token)
+
+It should build with `./build.sh` (it justs builds *.go in src)
+
+run with:
+```
+./fetch-starred "username" "password"
+```
+
+or set the environment variables `PCUSERNAME` and `PCPASSWORD`
+
+== Output files
+
+- Mp3s go in `downloaded/`
+- The id's of the sucessfully downloaded episodes are saved in `downloaded-successfully.txt`
+- The auth token (jwt) is saved in `authtoken.jwt`
